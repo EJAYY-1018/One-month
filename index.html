@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 1st Monthsary!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .memory-photos img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 12px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    input[type='text'] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+	
+<audio autoplay loop>
+  <source src="https://www.dropbox.com/t/LbgSEFWj5MYY2DM2" type="audio/mp3">
+</audio>
+
+<div id="part1">
+  <h1>Happy 1st Monthsary, Love!</h1>
+  <h2>What is our special date?</h2>
+  <input type="text" id="answer" placeholder="MMDDYY"><br><br>
+  <button class="button yes" onclick="checkAnswer()">Submit</button>
+</div>
+
+<div id="part2" class="hidden">
+  <h2>You got it right!</h2>
+  <p>Here are some of our memories:</p>
+  <div class="memory-photos">
+    <img src="photo1.jpg" alt="Us 1" class="popup-photo">
+    <img src="photo2.jpg" alt="Us 2" class="popup-photo">
+    <img src="photo3.jpg" alt="Us 3" class="popup-photo">
+    <img src="photo4.jpg" alt="Us 4" class="popup-photo">
+    <img src="photo5.jpg" alt="Us 5" class="popup-photo">
+    <img src="photo6.jpg" alt="Us 6" class="popup-photo">
+
+  </div>
+  <h2>Will you spend more months with me?</h2>
+  <button class="button yes" onclick="acceptLove()">Yes, I'd love to!</button>
+  <button id="noButton" class="button no" onclick="moveNo(this)">No</button>
+</div>
+
+<div id="part3" class="hidden">
+  <h2>Let's Plan Our Special Day!</h2>
+  <form id="planForm">
+    <p>Where would you like to go?</p>
+    <input type="text" required><br><br>
+    <p>What would you like to eat?</p>
+    <input type="text" required><br><br>
+    <p>What outfit should I wear?</p>
+    <input type="text" required><br><br>
+    <p>What time should we meet?</p>
+    <input type="text" required><br><br>
+    <p>Any special request?</p>
+    <input type="text" required><br><br>
+    <button type="submit" class="button yes">Submit</button>
+  </form>
+</div>
+
+<div id="final" class="hidden">
+  <h1>Perfect! ❤️</h1>
+  <p>I can't wait to spend our special day with you!</p>
+</div>
+
+<script>
+function checkAnswer() {
+  const input = document.getElementById('answer').value;
+  if (input === '032825') {
+    document.getElementById('part1').classList.add('hidden');
+    document.getElementById('part2').classList.remove('hidden');
+  } else {
+    alert('Oops! Try again, love!');
+  }
+}
+
+function acceptLove() {
+  document.getElementById('part2').classList.add('hidden');
+  document.getElementById('part3').classList.remove('hidden');
+}
+
+function moveNo(button) {
+  const x = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+  const y = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+  button.style.left = x + 'px';
+  button.style.top = y + 'px';
+  alert(noMessages[Math.floor(Math.random() * noMessages.length)]);
+}
+
+const noMessages = [
+  "Are you really sure?",
+  "Come on love, say yes!",
+  "Don't you love me?",
+  "You're not allowed to say no!",
+  "You're mine forever, right?",
+  "Please click yes!",
+  "I'm going to cry...",
+  "That's not funny haha",
+  "Think again love!",
+  "You love me don't you?",
+  "We made a promise!",
+  "Don't break my heart.",
+  "Click yes or else!",
+  "You can't escape me!",
+  "I'm the one!",
+  "Yes is the only way.",
+  "Our story just started.",
+  "Remember our memories?",
+  "Say yes pretty please!",
+  "I'm your destiny!",
+  "You're joking, right?",
+  "Try again...",
+  "Let’s not fight!",
+  "We're meant to be!",
+  "Why are you doing this?",
+  "No isn’t an option!",
+  "This button is cursed!",
+  "Say yes now!",
+  "This is fate!",
+  "Yes completes us.",
+  "Sayang love story natin!",
+  "Nani?!",
+  "Ayieee click yes!",
+  "Hmp loveeee!",
+  "Wag ka na magpabebe!",
+  "Kiss muna bago no!",
+  "Ikaw talaga ha!",
+  "Dami mong arte love!",
+  "Balik ka na sa yes!",
+  "Yes ka na dali!",
+  "Hindi ka makakatakas!",
+  "You’re not allowed to leave!",
+  "Clicking no = invalid!",
+  "No no no nooo!",
+  "Why are you so cute?",
+  "Okay ka lang?",
+  "Love mo ba ako?",
+  "Ouch!",
+  "Yes na dali!",
+  "No? For real?"
+];
+
+document.getElementById('planForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('part3').classList.add('hidden');
+  document.getElementById('final').classList.remove('hidden');
+});
+</script>
+
+</body>
+</html>
