@@ -1,0 +1,40 @@
+
+body {
+  background: linear-gradient(violet, pink);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+h1, h2 {
+  color: white;
+}
+.container {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px white;
+  max-width: 600px;
+  margin: auto;
+}
+.hidden {
+  display: none;
+}
+.photos img {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 15px;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff1493;
+}
